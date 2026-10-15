@@ -32,10 +32,12 @@ while saida != 1:
 
     media_placas = sum(placa._mediasplacas for placa in placastotal) / len(placastotal)
 
-    for i, placa in enumerate(placastotal, start=1):
-        print(f"Placa {i}: Peso {placa._peso:.0f} PesoSolda {placa._pesosolda:.0f}")
+    print("PLACAS CADASTRADAS:\n")
 
-    print(f"\nA média das placas são Kg {media_placas:.2f}")
+    for i, placa in enumerate(placastotal, start=1):
+        print(f"Placa {i}: Peso({placa._peso:.0f}) !! Peso+Solda({placa._pesosolda:.0f})")
+
+    print(f"\nA média das placas são {media_placas:.2f}")
     saida = int(input("Deseja sair? (1 - Sim, 0 - Não): "))
 
 print("\nPrograma encerrado.")
