@@ -6,23 +6,41 @@ class Placa():
 
 
     def media(self):
-        self._mediasplacas = (self._pesosolda - self._peso) / 5
+        self._mediasplacas = (self._pesosolda - self._peso)/1000
         
     def resultados(self):
-        return f"A média das placas são {self._mediasplacas}"
-
-placastotal = []
-
-for i in range(5):
-    peso1 = float(input(f"Peso {[i+1]}:"))
-    pesosolda1 = float(input(f"Peso Solda {[i+1]}:"))
-
-    p1 = Placa(peso1,pesosolda1)
-    p1.media()
+        return f"\nA média das placas são Kg {self._mediasplacas}"
     
-    placastotal.append(p1)
 
-for i, placa in enumerate(placastotal, start=1):
-    print(f"Placa {i}: Peso {placa._peso}. PesoSolda {placa._pesosolda}.")
+saida = 0
 
-print(p1.resultados())
+
+def ler_peso(mensagem):
+        while True:
+            try:
+                return float(input(mensagem))
+            except ValueError:
+                print("Valor inválido. Por favor, insira um número válido.")
+
+while saida != 1:
+    placastotal = []
+    for i in range(5):
+        peso1 = ler_peso(f"Peso {[i+1]}:")
+        pesosolda1 = ler_peso(f"Peso Solda {[i+1]}:")
+        
+        p1 = Placa(peso1,pesosolda1)
+        p1.media()
+        
+        placastotal.append(p1)
+
+    print("\n")
+
+    media_placas = sum(placa._mediasplacas for placa in placastotal) / len(placastotal)
+
+    for i, placa in enumerate(placastotal, start=1):
+        print(f"Placa {i}: Peso {placa._peso:.0f} PesoSolda {placa._pesosolda:.0f}")
+
+    print(placa.resultados())
+    saida = int(input("Deseja sair? (1 - Sim, 0 - Não): "))
+
+print("\nPrograma encerrado.")
