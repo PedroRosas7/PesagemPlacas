@@ -7,13 +7,8 @@ class Placa():
 
     def media(self):
         self._mediasplacas = (self._pesosolda - self._peso)/1000
-        
-    def resultados(self):
-        return f"\nA média das placas são Kg {self._mediasplacas}"
-    
-
+   
 saida = 0
-
 
 def ler_peso(mensagem):
         while True:
@@ -40,7 +35,7 @@ while saida != 1:
     for i, placa in enumerate(placastotal, start=1):
         print(f"Placa {i}: Peso {placa._peso:.0f} PesoSolda {placa._pesosolda:.0f}")
 
-    print(placa.resultados())
+    print(f"\nA média das placas são Kg {media_placas:.2f}")
     saida = int(input("Deseja sair? (1 - Sim, 0 - Não): "))
 
 print("\nPrograma encerrado.")
