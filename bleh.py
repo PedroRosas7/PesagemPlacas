@@ -35,9 +35,9 @@ while saida != 1:
     print("PLACAS CADASTRADAS:\n")
 
     for i, placa in enumerate(placastotal, start=1):
-        print(f"Placa {i}: Peso {placa._peso:.0f} !! Peso+Solda {placa._pesosolda:.0f} ")
+        print(f"Placa {i}: Peso {placa._peso:.0f}g !! Peso+Solda {placa._pesosolda:.0f}g ")
 
-    print(f"\nA média das placas são {media_placas:.2f}")
+    print(f"\nA média das placas são {media_placas:.2f}Kg\n")
     saida = int(input("Deseja sair? (1 - Sim, 0 - Não): "))
 
 print("\nPrograma encerrado.")
