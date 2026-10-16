@@ -1,5 +1,7 @@
 import json
 import math
+import threading
+import webbrowser
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 
@@ -185,14 +187,20 @@ class Servidor(BaseHTTPRequestHandler):
         print(f"{self.address_string()} - {formato % args}")
 
 
-if __name__ == "__main__":
+def main():
     endereco = ("0.0.0.0", 8000)
     servidor = ThreadingHTTPServer(endereco, Servidor)
-    print("Aplicação disponível em http://localhost:8000")
+    url = "http://localhost:8000"
+    print(f"Aplicação disponível em {url}")
     print("Para parar o servidor, pressione Ctrl+C.")
+    threading.Timer(1, webbrowser.open, args=(url,)).start()
     try:
         servidor.serve_forever()
     except KeyboardInterrupt:
         print("\nServidor encerrado.")
     finally:
         servidor.server_close()
+
+
+if __name__ == "__main__":
+    main()
