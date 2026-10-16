@@ -1,4 +1,4 @@
-class Placa():
+class Placa(): 
     def __init__(self,peso,pesosolda):
         self._peso = peso
         self._pesosolda = pesosolda
