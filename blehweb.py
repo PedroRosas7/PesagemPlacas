@@ -10,21 +10,21 @@ PAGINA = """<!doctype html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cálculo da média das placas</title>
+  <title>Uso de Material de Solda</title>
   <style>
-    :root { color-scheme: light; font-family: system-ui, sans-serif; }
-    body { margin: 0; padding: 32px 16px; background: #f1f5f9; color: #172033; }
-    main { max-width: 680px; margin: auto; padding: 28px; background: white;
+    :root { color-scheme: dark; font-family: Times, Times New Roman; }
+    body { margin: 0; padding: 32px 16px; background: #1F1D1D; color: #F4F5BF; }
+    main { max-width: 680px; margin: auto; padding: 28px; background: #2d2d2d;
       border-radius: 14px; box-shadow: 0 8px 28px #17203318; }
     h1 { margin-top: 0; font-size: 1.6rem; }
-    p { color: #526078; }
+    p { color: #89A1CC; }
     .linha { display: grid; grid-template-columns: 70px 1fr 1fr; gap: 12px;
       align-items: center; margin: 12px 0; }
     label { font-weight: 600; }
     input { box-sizing: border-box; width: 100%; padding: 11px;
       border: 1px solid #bdc8d8; border-radius: 7px; font: inherit; }
     input:focus { outline: 2px solid #2563eb; border-color: transparent; }
-    .cabecalho { color: #526078; font-size: .9rem; font-weight: 600; }
+    .cabecalho { color: #89A1CC; font-size: .9rem; font-weight: 600; }
     .botoes { display: flex; gap: 10px; margin-top: 22px; }
     button { padding: 11px 16px; border: 0; border-radius: 7px;
       font: inherit; font-weight: 600; cursor: pointer; }
@@ -41,8 +41,8 @@ PAGINA = """<!doctype html>
 </head>
 <body>
   <main>
-    <h1>Cálculo da média das placas</h1>
-    <p>Informe os pesos em gramas para calcular a média de material de solda em kg.</p>
+    <h1> Uso de Material de Solda </h1>
+    <p>Digite o peso das placas e placas com solda para se calcular a média usada.</p>
     <form id="formulario">
       <div class="linha cabecalho" aria-hidden="true">
         <span>Placa</span><span>Peso (g)</span><span>Peso + solda (g)</span>
@@ -61,11 +61,11 @@ PAGINA = """<!doctype html>
       const linha = document.createElement("div");
       linha.className = "linha";
       linha.innerHTML =
-        `<label for="peso-${i}">Placa ${i}</label>` +
+        `<label for="peso-${i}">PLACA ${i}</label>` +
         `<input id="peso-${i}" name="peso" type="text" inputmode="decimal" ` +
-        `placeholder="Ex.: 1200" aria-label="Peso da placa ${i} em gramas" required>` +
+        `placeholder="Ex.: 1234" aria-label="Peso da placa ${i} em gramas" required>` +
         `<input id="solda-${i}" name="peso_solda" type="text" inputmode="decimal" ` +
-        `placeholder="Ex.: 1250" aria-label="Peso da placa ${i} com solda em gramas" required>`;
+        `placeholder="Ex.: 1345" aria-label="Peso da placa ${i} com solda em gramas" required>`;
       campos.append(linha);
     }
 
